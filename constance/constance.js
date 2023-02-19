@@ -1,5 +1,5 @@
 export const ScreenType = { 
     home: "HOME", 
     addNote: "ADD_NOTE", 
-    allNotes: "ALL_NOTES" 
+    allNotes: "ALL_NOTES" ,
 }

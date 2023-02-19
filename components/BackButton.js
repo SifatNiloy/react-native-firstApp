@@ -1,11 +1,12 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { ScreenType } from '../constance/constance'
 
-const BackButton = () => {
+const BackButton = ({onButtonClick}) => {
     return (
         <View style={styles.container}>
-            <View style={styles.Button}>
-                <Button title='< Back' />
+            <View style={styles.button}>
+                <Button onPress={()=>{onButtonClick(ScreenType.home)}} color={"green"} title='< Back' />
             </View>
         </View>
     )
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     },
     button:{
         margin: 10,
+       
     }
 })
 

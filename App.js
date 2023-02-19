@@ -9,15 +9,15 @@ import AllNotesScreen from './screens/AllNotesScreen';
 import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
-  const [screen, setScreen]= useState(ScreenType.home);
+  const [screen, setScreen] = useState(ScreenType.home);
   let content;
-  if(screen===ScreenType.addNote){
-    content= <AddNote></AddNote>
+  if (screen === ScreenType.addNote) {
+    content = <AddNote />
   }
-  else if(screen===ScreenType.allNotes){
-    content= <AllNotesScreen/>
+  else if (screen === ScreenType.allNotes) {
+    content = <AllNotesScreen />
   }
-  else if(screen=== ScreenType.home){
+  else if (screen === ScreenType.home) {
     content = <HomeScreen onExit={(data) => {
       setScreen(data)
     }} />
@@ -25,16 +25,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <BackButton></BackButton>
-      <StatusBar style="auto" />
+      <BackButton onButtonClick={(data)=>setScreen(data)} />
       {content}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    container:{
-      flex: 1,
-    }
+  container: {
+    flex: 1,
+  }
 
 });
