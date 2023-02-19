@@ -1,19 +1,20 @@
 import { StyleSheet, Text, View, st, Dimensions, Pressable } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
-const HomeScreen = () => {
+import { ScreenType } from '../constance/constance'
+const HomeScreen = ({onExit}) => {
     return (
         <View style={styles.container}>
-            <Pressable>
+            <Pressable onPress={onExit(ScreenType.addNote)}>
                 <View style={styles.itemButton}>
-                    <Text>Add new note</Text>
-                    <Icon name='arrow-forward-outline'></Icon>
+                    <Text style={styles.title}>Add new note</Text>
+                    <Icon style={styles.icon} name='arrow-forward-outline'></Icon>
                 </View>
             </Pressable>
-            <Pressable>
+            <Pressable onPress={onExit(ScreenType.allNotes)}>
                 <View style={styles.itemButton}>
-                    <Text>View All Notes</Text>
-                    <Icon name='arrow-forward-outline'></Icon>
+                    <Text style={styles.title}>View All Notes</Text>
+                    <Icon style={styles.icon} name='arrow-forward-outline'></Icon>
                 </View>
             </Pressable>
         </View>
@@ -36,5 +37,20 @@ const styles = StyleSheet.create({
         backgroundColor: "#f5f5f5",
         justifyContent: 'center',
         alignItems:'center',
+        elevation: 10,
+        shadowOffset:{width:2, height:10},
+        shadowColor: "black",
+        shadowOpacity: 0.3,
+        shadowRadius: 2,
+    },
+    title: {
+        fontSize:35,
+        fontWeight: "bold",
+        textAlign: 'center',
+
+    },
+    icon:{
+        fontSize: 25,
+        paddingTop: 20,
     }
 })
