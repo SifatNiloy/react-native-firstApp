@@ -1,17 +1,19 @@
 import { StyleSheet, Text, View, st, Dimensions, Pressable } from 'react-native'
 import React from 'react'
-
+import Icon from 'react-native-vector-icons/Ionicons'
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <Pressable>
                 <View style={styles.itemButton}>
                     <Text>Add new note</Text>
+                    <Icon name='arrow-forward-outline'></Icon>
                 </View>
             </Pressable>
             <Pressable>
                 <View style={styles.itemButton}>
                     <Text>View All Notes</Text>
+                    <Icon name='arrow-forward-outline'></Icon>
                 </View>
             </Pressable>
         </View>
